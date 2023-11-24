@@ -66,10 +66,10 @@
                       <Component id="jbtnDemarcar" min="-2" max="-2" attributes="0"/>
                       <Component id="jbtnMarcar" min="-2" max="-2" attributes="0"/>
                       <Component id="jbtnVerificar" min="-2" max="-2" attributes="0"/>
-                      <Component id="jCheckBox2Info" min="-2" pref="85" max="-2" attributes="0"/>
                       <Component id="jCheckBoxIngles" min="-2" pref="85" max="-2" attributes="0"/>
+                      <Component id="jCheckBox2Info" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="252" max="32767" attributes="0"/>
+                  <EmptySpace pref="227" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -93,7 +93,7 @@
       <SubComponents>
         <Component class="javax.swing.JCheckBox" name="jCheckBoxIngles">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Ingl&#xea;s"/>
+            <Property name="text" type="java.lang.String" value="Java"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxInglesActionPerformed"/>
@@ -101,13 +101,16 @@
         </Component>
         <Component class="javax.swing.JCheckBox" name="jCheckBox2Info">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Inform&#xe1;tica"/>
+            <Property name="text" type="java.lang.String" value="Banco de dados "/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="jbtnVerificar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Verificar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnVerificarActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jbtnMarcar">
           <Properties>

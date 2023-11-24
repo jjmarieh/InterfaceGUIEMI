@@ -4,6 +4,8 @@
  */
 package view;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Geral
@@ -38,16 +40,21 @@ public class Exemplo4 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jCheckBoxIngles.setText("Inglês");
+        jCheckBoxIngles.setText("Java");
         jCheckBoxIngles.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBoxInglesActionPerformed(evt);
             }
         });
 
-        jCheckBox2Info.setText("Informática");
+        jCheckBox2Info.setText("Banco de dados ");
 
         jbtnVerificar.setText("Verificar");
+        jbtnVerificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnVerificarActionPerformed(evt);
+            }
+        });
 
         jbtnMarcar.setText("Marcar");
         jbtnMarcar.addActionListener(new java.awt.event.ActionListener() {
@@ -73,9 +80,9 @@ public class Exemplo4 extends javax.swing.JFrame {
                     .addComponent(jbtnDemarcar)
                     .addComponent(jbtnMarcar)
                     .addComponent(jbtnVerificar)
-                    .addComponent(jCheckBox2Info, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCheckBoxIngles, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(252, Short.MAX_VALUE))
+                    .addComponent(jCheckBoxIngles, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCheckBox2Info))
+                .addContainerGap(227, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -131,6 +138,17 @@ public class Exemplo4 extends javax.swing.JFrame {
          jCheckBox2Info.setSelected(false);
       jCheckBoxIngles.setSelected(false);
     }//GEN-LAST:event_jbtnDemarcarActionPerformed
+
+    private void jbtnVerificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnVerificarActionPerformed
+     String selecao = "Selecionados: ";
+     if(jCheckBoxIngles.isSelected()){
+         selecao+="\n"+jCheckBoxIngles.getText();
+     }
+     if((!jCheckBoxIngles.isSelected())&&(!jCheckBox2Info.isSelected())){
+         JOptionPane.showMessageDialog(null, "Nenhum curso selecionado!");
+     }else
+     JOptionPane.showMessageDialog(null, selecao);
+    }//GEN-LAST:event_jbtnVerificarActionPerformed
 
     /**
      * @param args the command line arguments
