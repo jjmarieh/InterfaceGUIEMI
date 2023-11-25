@@ -29,6 +29,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMnArquivo = new javax.swing.JMenu();
         jImnExemplo3 = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         Sair = new javax.swing.JMenu();
 
@@ -48,6 +49,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         jMnArquivo.add(jImnExemplo3);
+
+        jMenuItem1.setText("Exemplo4");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMnArquivo.add(jMenuItem1);
 
         jMenuBar1.add(jMnArquivo);
 
@@ -90,6 +99,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
        System.exit(0);
     }//GEN-LAST:event_SairMouseClicked
 
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        Exemplo4 tela = new Exemplo4();
+        tela.setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -130,6 +144,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jImnExemplo3;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenu jMnArquivo;
     // End of variables declaration//GEN-END:variables
 }

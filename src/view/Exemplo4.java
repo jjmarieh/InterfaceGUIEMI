@@ -29,8 +29,8 @@ public class Exemplo4 extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jCheckBoxIngles = new javax.swing.JCheckBox();
-        jCheckBox2Info = new javax.swing.JCheckBox();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        jCheckBox2 = new javax.swing.JCheckBox();
         jbtnVerificar = new javax.swing.JButton();
         jbtnMarcar = new javax.swing.JButton();
         jbtnDemarcar = new javax.swing.JButton();
@@ -40,14 +40,14 @@ public class Exemplo4 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jCheckBoxIngles.setText("Java");
-        jCheckBoxIngles.addActionListener(new java.awt.event.ActionListener() {
+        jCheckBox1.setText("Java");
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBoxInglesActionPerformed(evt);
+                jCheckBox1ActionPerformed(evt);
             }
         });
 
-        jCheckBox2Info.setText("Banco de dados ");
+        jCheckBox2.setText("Banco de dados ");
 
         jbtnVerificar.setText("Verificar");
         jbtnVerificar.addActionListener(new java.awt.event.ActionListener() {
@@ -80,16 +80,16 @@ public class Exemplo4 extends javax.swing.JFrame {
                     .addComponent(jbtnDemarcar)
                     .addComponent(jbtnMarcar)
                     .addComponent(jbtnVerificar)
-                    .addComponent(jCheckBoxIngles, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCheckBox2Info))
+                    .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCheckBox2))
                 .addContainerGap(227, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jCheckBoxIngles)
+                .addComponent(jCheckBox1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox2Info)
+                .addComponent(jCheckBox2)
                 .addGap(45, 45, 45)
                 .addComponent(jbtnVerificar)
                 .addGap(18, 18, 18)
@@ -125,26 +125,29 @@ public class Exemplo4 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jCheckBoxInglesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxInglesActionPerformed
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBoxInglesActionPerformed
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     private void jbtnMarcarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnMarcarActionPerformed
-      jCheckBox2Info.setSelected(true);
-      jCheckBoxIngles.setSelected(true);
+      jCheckBox2.setSelected(true);
+      jCheckBox1.setSelected(true);
     }//GEN-LAST:event_jbtnMarcarActionPerformed
 
     private void jbtnDemarcarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnDemarcarActionPerformed
-         jCheckBox2Info.setSelected(false);
-      jCheckBoxIngles.setSelected(false);
+         jCheckBox2.setSelected(false);
+      jCheckBox1.setSelected(false);
     }//GEN-LAST:event_jbtnDemarcarActionPerformed
 
     private void jbtnVerificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnVerificarActionPerformed
      String selecao = "Selecionados: ";
-     if(jCheckBoxIngles.isSelected()){
-         selecao+="\n"+jCheckBoxIngles.getText();
+     if(jCheckBox1.isSelected()){
+         selecao+="\n"+jCheckBox1.getText();
      }
-     if((!jCheckBoxIngles.isSelected())&&(!jCheckBox2Info.isSelected())){
+     if(jCheckBox2.isSelected()){
+         selecao+="\n"+jCheckBox2.getText();
+     }
+     if((!jCheckBox1.isSelected())&&(!jCheckBox2.isSelected())){
          JOptionPane.showMessageDialog(null, "Nenhum curso selecionado!");
      }else
      JOptionPane.showMessageDialog(null, selecao);
@@ -186,8 +189,8 @@ public class Exemplo4 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBox jCheckBox2Info;
-    private javax.swing.JCheckBox jCheckBoxIngles;
+    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
