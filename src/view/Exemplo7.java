@@ -4,6 +4,8 @@
  */
 package view;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Geral
@@ -26,21 +28,104 @@ public class Exemplo7 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jTxtCampoValor = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jLDesconto = new javax.swing.JList<>();
+        jTextResultado = new javax.swing.JTextField();
+        jBtnCalcular = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel1.setText("Valor");
+
+        jLDesconto.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "10%", "20%", "30%", "40%", "50%" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(jLDesconto);
+
+        jTextResultado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextResultadoActionPerformed(evt);
+            }
+        });
+
+        jBtnCalcular.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8-calculadora-16.png"))); // NOI18N
+        jBtnCalcular.setText("Calcule");
+        jBtnCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnCalcularActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(88, 88, 88)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jBtnCalcular, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextResultado)
+                    .addComponent(jTxtCampoValor)
+                    .addComponent(jScrollPane1))
+                .addContainerGap(222, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTxtCampoValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
+                .addComponent(jBtnCalcular, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(170, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextResultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextResultadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextResultadoActionPerformed
+
+    private void jBtnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCalcularActionPerformed
+      if(jTxtCampoValor.getText().equals("")){
+          jTxtCampoValor.requestFocus();
+          return;
+      }
+      try {
+         float valor = Float.parseFloat(jTxtCampoValor.getText());
+         if(jLDesconto.getSelectedIndex()== -1){
+           JOptionPane.showMessageDialog(null, "Selecione um item da lista!");  
+         }
+         float pDesconto = 0.9f;
+         if(jLDesconto.getSelectedIndex()==1){
+             pDesconto = 0.8f;
+         }
+         if(jLDesconto.getSelectedIndex()==2){
+             pDesconto = 0.7f;
+         }
+         if(jLDesconto.getSelectedIndex()==3){
+             pDesconto = 0.6f;
+         }
+         if(jLDesconto.getSelectedIndex()==4){
+             pDesconto = 0.5f;
+         }
+         jTextResultado.setText(""+valor*pDesconto);
+      } catch (Exception e){
+          
+      }
+    }//GEN-LAST:event_jBtnCalcularActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +163,11 @@ public class Exemplo7 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBtnCalcular;
+    private javax.swing.JList<String> jLDesconto;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTextResultado;
+    private javax.swing.JTextField jTxtCampoValor;
     // End of variables declaration//GEN-END:variables
 }
